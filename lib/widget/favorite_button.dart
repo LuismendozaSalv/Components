@@ -17,17 +17,11 @@ class _FavoriteButtonState extends State<FavoriteButton> {
         IconButton(
           onPressed: () {
             setState(() {
-              _isFavorite = !_isFavorite; // Toggle the favorite state
+              _isFavorite = !_isFavorite;
             });
           },
-          icon: Icon(
-            _isFavorite
-                ? Icons.favorite
-                : Icons.favorite_border, // Conditional icon
-          ),
-          color: _isFavorite
-              ? Colors.red
-              : null, // Optional: change color as well
+          icon: Icon(_isFavorite ? Icons.favorite : Icons.favorite_border),
+          color: _isFavorite ? Colors.red : null,
         ),
       ],
     );

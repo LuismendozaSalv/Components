@@ -8,14 +8,11 @@ class AlertDialogCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      contentPadding: EdgeInsets.zero, // Remove default padding
+      contentPadding: EdgeInsets.zero,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.network(
-            item.imageUrl,
-            fit: BoxFit.contain, // Adjust fit for dialog display
-          ),
+          Image.network(item.imageUrl, fit: BoxFit.contain),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
@@ -26,11 +23,16 @@ class AlertDialogCustom extends StatelessWidget {
         ],
       ),
       actions: [
-        TextButton(
-          onPressed: () {
-            Navigator.of(context).pop(); // Close the dialog
-          },
-          child: const Text('Cerrar'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cerrar'),
+            ),
+          ],
         ),
       ],
     );
